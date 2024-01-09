@@ -1,4 +1,4 @@
-# ![[tktk Module Name] - tktk Microlesson Name](./assets/hero.png)
+# ![[tktk Exposing a GET Request] - tktk Exposing a GET Request](./assets/hero.png)
 
 **Learning objective:** By the end of this lesson, students will be able to tktk
 
@@ -6,15 +6,15 @@
 
 In this lesson we will be creating a simple calculator API. This API will have four routes:
 
-- `GET` - `/calculator` - This route will return the current total of the calculator.
-- `POST` - `/calculator` - This route will accept a number and an operation and update the total of the calculator.
-- `DELETE` - `/calculator` - This route will reset the total of the calculator to 0.
+| HTTP Method | Route         | Description                                             |
+|-------------|---------------|---------------------------------------------------------|
+| GET         | /calculator   | Returns the current total of the calculator.            |
+| POST        | /calculator   | Accepts a number and an operation to update the total.  |
+| DELETE      | /calculator   | Resets the total of the calculator to 0.                |
 
 ## Exposing a GET Request
 
-Let's build out the first route for our calculator API. This route will return the current total of the calculator. We will use the `GET` HTTP method for this route because we are not expecting any user data. We will also use the `/calculator` route. This means that the full route will be `GET /calculator`.
-
-We will also need to return the current total of the calculator. We could add a database to our application to store the total, but for this lesson we will just store the total in a variable. We will start with a total of 0.
+Before building out our first route we will need to somehow store the `total` of the calculator. We could add a database to our application to store the total, but for this lesson we will just store the total in a variable. We will start with a total of 0.
 
 ```js
 // ... Require statements located above
@@ -28,11 +28,13 @@ let total = 0;
 
 > We are using `let` instead of `const` because we will be updating the value of `total` when we build our `POST` request.
 
+Let's build out the first route for our calculator API. This route will return the current total of the calculator. We will use the `GET` HTTP method for this route because we are not expecting any user data. We will also use the `/calculator` route. This means that the full route will be `GET /calculator`.
+
 Before we build the route let's review some of the main components of making an API:
 
-- **Routes** - This endpoint is `/calculator`.
-- **Requests** - Users will make a `GET` request to this endpoint and be expected to provide no data.
-- **Responses** - We will return a JSON object with the current total of the calculator.
+- **Endpoint** - This endpoint is `/calculator`.
+- **Request** - Users will make a `GET` request to this endpoint and be expected to provide no data.
+- **Response** - We will return a JSON object with the current total of the calculator.
 
 Now that we have reviewed the main components of making an API let's build out the route. We will use the `app.get()` method to create the route.
 
@@ -49,7 +51,7 @@ app.get('/calculator', (req, res) => {
 // Listening for requests on port 3000 below
 ```
 
-In this route we only want to return the total of the calculator. We can do this by sending the total back in the response. We can use the [`res.json()`](https://expressjs.com/en/5x/api.html#res.json) method to send the total back in the response. This method takes one argument, the data that we want to send back. In this case we want to send back the total, so we will pass in the `total` variable.
+In this route we only want to return the total of the caluculator. We can do this by sending the `total` back as a JSON object. We can use the [`res.json()`](https://expressjs.com/en/5x/api.html#res.json) method to accoplish this goal. This method takes one argument, the data that we want to send back. In this case we want to send back the total, so we will pass in the `total` variable.
 
 ```js
 // ... Require statements located above
@@ -65,7 +67,9 @@ app.get('/calculator', (req, res) => {
 ```
 > 🧠 We are using the shorthand syntax for the object. This is the same as writing `{ total: total }`. But why are we doing this? As a simple API we know that we will only be returning the total. However, if we were building a more complex API we might be returning more data. So by including a key that represents the data we are returning we are making it easier for other developers and applications to use our API.
 
-Finally we have come to a point where we can start testing this endpoint. Since this is a `GET` request we could use the browser and navigate to `http://localhost:3000/calculator`. However, we will be using Postman to test our API. Open Postman and let's create a new collection to contain our requests. Follow the steps to get started in a new collection:
+## Testing a GET API Endpoint
+
+We have come to a point where we can start testing this endpoint. Since this is a `GET` request we could use the browser and navigate to `http://localhost:3000/calculator`. However, we will be using Postman to test our API. Open Postman and let's create a new collection to contain our requests. Follow the steps to get started in a new collection:
 
 - Click on the `New` button in the top left corner of the Postman window.
 - Select `Collection` from the menu.

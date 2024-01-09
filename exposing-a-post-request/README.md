@@ -1,4 +1,4 @@
-# ![[tktk Module Name] - tktk Microlesson Name](./assets/hero.png)
+# ![[tktk Exposing a POST Request] - tktk Exposing a POST Request](./assets/hero.png)
 
 **Learning objective:** By the end of this lesson, students will be able to tktk
 
@@ -8,11 +8,11 @@ Now that we have built out the `GET` route for our calculator API let's build ou
 
 Looping back to the main components of making an API:
 
-- **Routes** - This endpoint is `/calculator`.
-- **Requests** - Users will make a `POST` request to this endpoint and be expected to provide a number and an operation.
-- **Responses** - We will return a JSON object with the current total of the calculator.
+- **Endpoint** - This endpoint is `/calculator`.
+- **Request** - Users will make a `POST` request to this endpoint and be expected to provide a number and an operation.
+- **Response** - We will return a JSON object with the current total of the calculator.
 
-Since we are expecting the user to send in some data it's alway best to determine first in what shape are we expecting that incoming data to be in. In this case we are expecting the user to send in a number and an operation. We will use the following format for the data:
+Since we are expecting the user to send in some data it's alway best to determine first in what shape are we expecting that incoming data to be in. In this case we are expecting the user to send in a number and an operation. We will use the following format for the expected incoming data:
 
 ```json
 {
@@ -108,6 +108,8 @@ app.post('/calculator', (req, res) => {
 // Listening for requests on port 3000 below
 ```
 
+## Testing a POST API Endpoint
+
 Once again we are at the point of testing. But before we can start really testing we need to talk about a limitation to Express. By default Express does not accept JSON data from a request. We will need to add a middleware to our application to allow Express to accecpt incoming JSON data. 
 
 Luckily there is an easy way to do this. We can use the [`express.json()`](https://expressjs.com/en/5x/api.html#express.json) middleware. This middleware will parse incoming JSON data and add it to the `req.body` object. We will add this middleware to our application before we define our routes.
@@ -151,4 +153,10 @@ Don't forget to save this request. Once saved you can click on the `Send` button
 }
 ```
 
-## Review Questions
+## You do: Exposing a DELETE Request
+
+We have done two routes together nows it's time to strech our legs and try this ourselves. The goal is to create a `DELETE` route that will reset the total of the calculator. We will use the following components to build this route:
+
+- **Endpoint** - This endpoint is `/calculator`.
+- **Request** - Users will make a `DELETE` request to this endpoint and be expected to provide no data.
+- **Response** - We will return a status code of no content.

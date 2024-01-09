@@ -1,45 +1,59 @@
-# ![[tktk Module Name] - tktk Microlesson Name](./assets/hero.png)
+# ![[tktk Concepts] - tktk Concepts](./assets/hero.png)
 
 **Learning objective:** By the end of this lesson, students will be able to tktk
 
-## APIs
+## Express.js and APIs
 
-One of the uses of Express is to create APIs. APIs can be created for a lot of reasons, but the most common is to allow other developers to access data from your application. For example, if you were building a weather app, you might want to allow other developers to access your weather data so that they can build their own apps using your data.
+Express can be used to create a variety of applications, one of them being APIs. APIs can also be created for serverl different reasons:
 
-Unlike creating a web application using Express, where the user interacts with the application through a browser, an API is designed to be used by other applications. This can be another API, a mobile app or web app, or even a command line application.
+- To provide data for applications. ex: [PokeAPI](https://pokeapi.co/) - An API that allows developers to access data about Pokemon.
+- To provide map functionality. ex: [Google Maps API](https://developers.google.com/maps/documentation/javascript/overview) - An API that allows developers to add maps to their applications.
+- To provide payment functionality. ex: [Stripe API](https://stripe.com/docs/api) - An API that allows developers to add payment functionality to their applications.
+
+Looking at these *third party APIs* we can see a trend. They are all providing functionality that developers can use in their applications. This is the most common use of an API. They are used to provide data or functionality to other applications. This means that we don't need to worry about creating a user interface. We only need to worry about creating the routes that will be used to access the data or functionality.
+
+> 📚 *Third party APIs* are APIs that are created by a company or organization that is not the company or organization that is using the API.
+
+tktk Hunter - Can you make an image of an api that is accepting requests from a variety of sources? Or something like that? The goal is to show that an api is a stand alone application that can be consumed by a variety of applications.
 
 ## What is an API?
 
 An API is an application programming interface. It is a set of rules that allows one application to talk to another application. There are a couple of key concepts in making an API:
 
-- **Routes** - Routes are the endpoints that we define in our application.
+- **Endpoints** - Endpoints are the routes that we define in our application.
 - **Requests** - Requests are the incoming requests that are made to our application.
 - **Responses** - Responses are the data that we send back to the requester.
 
-### Routes
+### Endpoints
 
-Routes are the endpoints that we define in our application. They use the HTTP methods that we learned about in the previous lesson. The most common HTTP methods that we will use in our APIs are `GET`, `POST`, `PUT`, and `DELETE`. Since we are uing the same HTTP methods that means the same Express methods that we used in the previous lesson will work for our APIs.
+Endpoints are the routes that we define in our application. The most common HTTP methods that we will use in our APIs are `GET`, `POST`, `PUT`, `PATCH` and `DELETE`. Luckily Express.js has methods that we can use to create these routes.
+
+A good practice when creating endpoints is to use a common route for all of the endpoints. This should be named after the resource that we are working with. This is called the base URL. For example, if we are creating an API for a calculator we could use the base URL of `/calculator`. This means that all of our endpoints will start with `/calculator`.
+
+> 🧠 There is a couple of standards of archecture we could follow when creating endpoints for our APIs. The most common is the [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) archecture. 
 
 ### Requests
 
-Requests are the incoming requests that are made to our application. These requests are made by other applications. During development we will use a tool called Postman to make requests to our API. Postman allows us to make requests to our API and see the responses that are sent back.
+The request are incoming request that are made to our API. The request break down into three components:
 
-Along with creating the API code you will need to create documentation to go along with your API. This documentation will tell other developers how to use your API. This documentation should include:
+- **HTTP Method** - The HTTP method is the type of request that is being made. The most common HTTP methods that we will use in our APIs are `GET`, `POST`, `PUT`, `PATCH` and `DELETE`.
+- **URL** - The URL is the location of the resource that we are requesting. This is made up of the base URL and the endpoint.
+- **Data** - The data is the data that we are sending to the API. This data can be in a variety of formats, but the most common are JSON and XML.
 
-- The base URL for your API
-- The routes that are available
-- The HTTP methods that are available for each route
-- The data that is expected for each route
-- The data that is returned for each route
-- Any errors that might be returned
+As we build an API we will need to determine what data we are expecting from the requester. This will help us determine what data we need to send back to the requester.
 
-There are other items we could include in our documentation, but these are the most important.
+> 📚 Sometimes data will not be required and in the case of `GET` request impossible to send to the API.
+
+During development we will use a tool called [Postman](https://www.postman.com/) to make requests to our API. Postman allows us to make requests to our API and see the responses that are sent back.
 
 ### Responses
 
-Responses are the data that we send back to the requester. This data can be in a variety of formats, but the most common are JSON and XML. JSON is the most common format for APIs, so we will be using that in our APIs. JSON stands for JavaScript Object Notation. It is a format that is easy for computers to read and write, but it is also easy for humans to read and write.
+Responses are the data that we send back to the requester after processing their request. The response break down into two components:
 
-JSON is formatted almost like a JavaScript object. It is a collection of key/value pairs. The keys are strings and the values can be strings, numbers, arrays, objects, booleans, and nulls. Here is an example of a JSON object:
+- **Status Code** - The status code is a number that represents the status of the request. There are a variety of status codes, but the most common are `200`, `201`, `204`, `400`, `401`, `403`, `404`, `500`, and `503`.
+- **Data** - The data that we are sending back to the requester. This data can be in a variety of formats, but the most common are JSON and XML.
+
+Just like with requests as we build an API we will need to determine what data we are sending back to the requester. We will be sending JSON back to the requester. JSON is formatted almost like a JavaScript object. It is a collection of key/value pairs. The keys are strings and the values can be strings, numbers, arrays, objects, booleans, and nulls. Here is an example of a JSON object:
 
 ```json
 {

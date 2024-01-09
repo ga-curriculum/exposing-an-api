@@ -1,4 +1,4 @@
-# ![[tktk Module Name] - tktk Microlesson Name](./assets/hero.png)
+# ![[tktk Setup] - tktk Setup](./assets/hero.png)
 
 ## Setup
 
@@ -20,10 +20,11 @@ Create a server.js file. This file will hold your work for this lecture:
 touch server.js
 ```
 
-In the terminal, create a package.json with all of the default settings by running the following command:
+In the terminal, create a package.json with all of the default settings and install Express.js by running the following commands:
 
 ```bash
 npm init -y
+npm i express
 ```
 
 Open the contents of the directory in VS Code:
@@ -32,7 +33,7 @@ Open the contents of the directory in VS Code:
 code .
 ```
 
-Finally, add boilerplate code to the `server.js` file:
+Add boilerplate code to the `server.js` file:
 
 ```js
 // Requiring in Express
@@ -48,4 +49,8 @@ app.listen(3000, () => {
 });
 ```
 
-TODO: run nodmon
+Finally, run the server with `nodemon`:
+
+```bash
+nodemon server.js
+```
