@@ -1,6 +1,6 @@
-# ![[tktk Exposing a POST Request] - tktk Exposing a POST Request](./assets/hero.png)
+# ![[Exposing a POST Request] - Exposing a POST Request](./assets/tktk-hero.png)
 
-**Learning objective:** By the end of this lesson, students will be able to tktk
+**Learning objective:** By the end of this lesson, students will be able to write a `POST` route and use Postman to post to it.
 
 ## Exposing a POST Request
 

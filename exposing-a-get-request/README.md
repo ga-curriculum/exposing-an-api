@@ -1,6 +1,6 @@
-# ![[tktk Exposing a GET Request] - tktk Exposing a GET Request](./assets/hero.png)
+# ![[Exposing a GET Request] - Exposing a GET Request](./assets/tktk-hero.png)
 
-**Learning objective:** By the end of this lesson, students will be able to tktk
+**Learning objective:** By the end of this lesson, students will be able to write a `GET` route and use Postman to consume from it.
 
 ## Calculator API
 
@@ -26,7 +26,7 @@ let total = 0;
 // Listening for requests on port 3000 below
 ```
 
-> We are using `let` instead of `const` because we will be updating the value of `total` when we build our `POST` request.
+> 🧠 We are using `let` instead of `const` because we will be updating the value of `total` when we build our `POST` request.
 
 Let's build out the first route for our calculator API. This route will return the current total of the calculator. We will use the `GET` HTTP method for this route because we are not expecting any user data. We will also use the `/calculator` route. This means that the full route will be `GET /calculator`.
 
@@ -93,5 +93,3 @@ Now that we have created the request we can test it. Click on the `Send` button 
   "total": 0
 }
 ```
-
-## Review Questions

@@ -2,35 +2,26 @@
 
 ## About
 
-tktk Write a short but descriptive summary of the content in this module.
+This module will cover the basics of using Express.js to create an API. Students will learn how to create endpoints, handle requests, and send responses.
 
 ## Prerequisites
 
-- tktk
-- tktk
-- tktk
+- HTTP Request Response Cycle
+- Intro to Express
 
 ## Content
 
 | Lesson | Video Time | Video | Skills |
 | ------ |:----------:|:-----:| ------ |
-| [Setup](./setup/README.md) | -- | -- | tktk skills covered |
-| [Concepts](./concepts/README.md) | -- | -- | tktk skills covered |
-| [Exposing a GET Request](./exposing-a-get-request/README.md) | -- | -- | tktk skills covered |
-| [Exposing a POST Request](./exposing-a-post-request/README.md) | -- | -- | tktk skills covered |
+| [Setup](./setup/README.md) | -- | -- | -- |
+| [Concepts](./concepts/README.md) | -- | -- | Decribe what an API is and what they are used for. |
+| [Exposing a GET Request](./exposing-a-get-request/README.md) | -- | -- | Expose a GET route and use Postman to consume from it.  |
+| [Exposing a POST Request](./exposing-a-post-request/README.md) | -- | -- | Expose a GET route and use Postman to post to it. |
 | **Total content**                                        | -- | -- |                     |
 
 ## References
 
 📖 [Reference Materials](./references/README.md)
-
-## Deployed sites
-
-tktk If there is not a deployed site related to this module this section and all of its content should be removed.
-
-🌐 [Live site](#tktk-deployed-app-url)
-
-🐙 [Repository](#tktk-repository-for-deployed-app)
 
 ## Internal resources
 

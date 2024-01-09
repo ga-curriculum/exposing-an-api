@@ -1,4 +1,4 @@
-# ![[tktk Setup] - tktk Setup](./assets/hero.png)
+# ![[Setup] - Setup](./assets/tktk-hero.png)
 
 ## Setup
 

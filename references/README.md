@@ -1,13 +1,7 @@
-# ![[tktk Module Name] - References](./assets/hero.png)
+# ![Exposing an API - References](./assets/tktk-hero.png)
 
 ## Lesson references
 
-- [tktk descriptive name of link]()
-- [tktk descriptive name of link]()
-- [tktk descriptive name of link]()
-
-## Level Up references
-
-- [tktk descriptive name of link]()
-- [tktk descriptive name of link]()
-- [tktk descriptive name of link]()
+- [Express.js](https://expressjs.com/)
+- [`res.json`](https://expressjs.com/en/5x/api.html#res.json)
+- [`express.json()`](https://expressjs.com/en/api.html#express.json)

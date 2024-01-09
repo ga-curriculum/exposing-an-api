@@ -1,6 +1,6 @@
-# ![[tktk Concepts] - tktk Concepts](./assets/hero.png)
+# ![[Concepts] - Concepts](./assets/tktk-hero.png)
 
-**Learning objective:** By the end of this lesson, students will be able to tktk
+**Learning objective:** By the end of this lesson, students will be able to explain what an API is and what they are used for.
 
 ## Express.js and APIs
 
@@ -26,7 +26,7 @@ An API is an application programming interface. It is a set of rules that allows
 
 ### Endpoints
 
-Endpoints are the routes that we define in our application. The most common HTTP methods that we will use in our APIs are `GET`, `POST`, `PUT`, `PATCH` and `DELETE`. Luckily Express.js has methods that we can use to create these routes.
+Endpoints are the routes that we define in our application. Endpoints are the way we allow access to our API. Each endpoint will map to a function in our application that will handle the request and send back a response. This could be as simple as sending back a string or as complex as sending back a JSON object.
 
 A good practice when creating endpoints is to use a common route for all of the endpoints. This should be named after the resource that we are working with. This is called the base URL. For example, if we are creating an API for a calculator we could use the base URL of `/calculator`. This means that all of our endpoints will start with `/calculator`.
 
