@@ -4,7 +4,7 @@
 
 ## Elements of an API
 
-It is a set of rules that allows one application to talk to another. There are a couple of key concepts in making an API:
+There are a couple of key concepts in making an API:
 
 - **Endpoints** - Endpoints are the routes we define in our application.
 - **Requests** - Requests are the incoming requests to our application.
@@ -24,11 +24,9 @@ The requests are incoming requests that are made to our API. The request breaks 
 
 - **HTTP Method** - The HTTP method is the type of request being made. The most common HTTP methods we will use in our APIs are `GET`, `POST`, `PUT`, `PATCH` and `DELETE`.
 - **URL** - The URL is the location of the resource that we are requesting. This is made up of the base URL and the endpoint.
-- **Data** - The data is the data that we are sending to the API. This data can be in various formats, but the most common are JSON and XML.
+- **Data** - The data is the data that the API is sending. This data can be in various formats, but the most common are JSON and XML.
 
-As we build an API, we must determine what data we are expecting from the requester. This will help us decide what data to send back to the requester.
-
-> 📚 Sometimes, data will not be required, and in the case of a `GET` request, data is impossible to send to the API.
+As we build an API, we must determine what data we are expecting from the requester. This will help us decide what data to send back as a response.
 
 During development, we will use a tool called [Postman](https://www.postman.com/) to make requests to our API. Postman allows us to make requests to our API and see the responses that are sent back.
 
@@ -36,10 +34,10 @@ During development, we will use a tool called [Postman](https://www.postman.com/
 
 Responses are the data we send back to the requester after processing their request. The response breaks down into two components:
 
-- **Status Code** - The status code is a number that represents the request's status. There are a variety of status codes, but the most common are `200`, `201`, `204`, `400`, `401`, `403`, `404`, `500`, and `503`.
+- **Status Code** - This information is usually sent in the headers of the response, but it can also appear in the body.  It's a quick way for the client to make sure everything worked as expected.  If it did not, the status code can give a hint as to what went wrong.  There are a variety of status codes, but the most common are `200`, `201`, `204`, `400`, `401`, `403`, `404`, `500`, and `503`.  More can be found [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).  
 - **Data** - The data we send back to the requester. This data can be in various formats, but the most common are JSON and XML.
 
-As with requests, we must determine what data we send back to the requester as we build an API. We will be sending JSON back to the requester. JSON is formatted almost like a JavaScript object. It is a collection of key/value pairs. The keys are strings, and the values can be strings, numbers, arrays, objects, booleans, and nulls. Here is an example of a JSON object:
+As with requests, we must determine what kind of data we send back as a response. In this module, we will be sending JSON back to the requester. JSON is formatted almost like a JavaScript object. It is a collection of key/value pairs. The keys are strings, and the values can be strings, numbers, arrays, objects, booleans, and nulls. Here is an example of a JSON object:
 
 ```json
 {
@@ -56,6 +54,8 @@ As with requests, we must determine what data we send back to the requester as w
   "quote": "I'm a soldier, Major. I'm not used to relaxing."
 }
 ```
+
+The important thing to note is that the keys must be surrounded by double quotes `"`.  In JavaScript, for example, `"species"` could have also been written as `species`.  Not so, in JSON.
 
 ## Review Questions
 
