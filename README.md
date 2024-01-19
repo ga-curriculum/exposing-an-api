@@ -15,6 +15,7 @@ This module will cover the basics of using Express.js to create an API. Students
 | ------ |:----------:|:-----:| ------ |
 | [Setup](./setup/README.md) | -- | -- | -- |
 | [Concepts](./concepts/README.md) | -- | -- | Decribe what an API is and what they are used for. |
+| [Elements of an API](./elements-of-an-api/README.md) | -- | -- | Decribe what an API is and what they are used for. |
 | [Exposing a GET Request](./exposing-a-get-request/README.md) | -- | -- | Expose a GET route and use Postman to consume from it.  |
 | [Exposing a POST Request](./exposing-a-post-request/README.md) | -- | -- | Expose a GET route and use Postman to post to it. |
 | **Total content**                                        | -- | -- |                     |
