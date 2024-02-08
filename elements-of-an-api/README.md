@@ -1,43 +1,56 @@
-# ![[Concepts] - Concepts](./assets/tktk-hero.png)
+# ![Exposing an API - Elements of an API](./assets/hero.png)
 
-**Learning objective:** By the end of this lesson, students will be able to describe the elements of an API.
+**Learning objective:** By the end of this lesson, students will be able to identify and explain the main components of an API – endpoints, requests, and responses.
 
 ## Elements of an API
 
-There are a couple of key concepts in making an API:
+In this lesson, we're going to explore the essential elements that make up an API. Understanding these components is critical in building and interacting with APIs effectively.
 
-- **Endpoints** - Endpoints are the routes we define in our application.
-- **Requests** - Requests are the incoming requests to our application.
-- **Responses** - Responses are the data we send back to the requester.
+Building an API involves three key concepts:
 
-### Endpoints
+- **Endpoints**
+- **Requests**
+- **Responses**
 
-Endpoints are the routes that we define in our application. Endpoints are the way we allow access to our API. Each endpoint will map to a function in our application that will handle the request and send back a response. This could be as simple as sending back a string or as complex as sending back a JSON object.
+Each of these elements plays a specific role in how an API functions, from defining access points to handling data exchange.
 
-A good practice when creating endpoints is using a standard route for all endpoints. This should be named after the resource that we are working with. This is called the base URL. For example, if we create an API for a calculator, we could use the base URL of `/calculator`. This means all our endpoints will start with `/calculator`.
+## Endpoints
 
-> 🧠 We could follow a couple of architecture standards when creating endpoints for our APIs. The most common is the [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) architecture. 
+Endpoints are specific paths or routes defined in your API that determine how it interacts with the outside world. Each endpoint will map to a function in our application that will handle the request and send back a response. This could be as simple as sending back a string or as complex as sending back a JSON object.
 
-### Requests
+When designing an API, it's important to organize your endpoints in a clear and logical manner. One effective way to do this is by using a base URL. The base URL acts as a consistent starting point for all the endpoints in your API, and it's typically named after the primary resource or service your API provides.
 
-The requests are incoming requests that are made to our API. The request breaks down into three components:
+For example, if we create an API for a calculator, we could use the base URL of `/calculator`. This means all our endpoints will start with `/calculator`.
 
-- **HTTP Method** - The HTTP method is the type of request being made. The most common HTTP methods we will use in our APIs are `GET`, `POST`, `PUT`, `PATCH` and `DELETE`.
-- **URL** - The URL is the location of the resource that we are requesting. This is made up of the base URL and the endpoint.
-- **Data** - The data is the data that the API is sending. This data can be in various formats, but the most common are JSON and XML.
+Best Practices:
+
+- It's good to follow a standard naming convention for your endpoints. Using [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) architecture can be beneficial for consistency and clarity.
+
+## Requests
+
+A request is what a client sends to your API when it wants to interact with it. 
+
+Each request consists of:
+
+- **HTTP Method:** This indicates the action type, such as GET (retrieve data), POST (send data), PUT (update data), etc.
+- **URL:** Composed of the base URL and the specific endpoint, it specifies where the request is being sent.
+- **Data:** This is the payload or information sent by the client, commonly in formats like `JSON` or `XML`.
 
 As we build an API, we must determine what data we are expecting from the requester. This will help us decide what data to send back as a response.
 
-During development, we will use a tool called [Postman](https://www.postman.com/) to make requests to our API. Postman allows us to make requests to our API and see the responses that are sent back.
+During development, we will use a tool called [Postman](https://www.postman.com/) for interacting with our API. Postman allows us to both make requests and see the responses that are sent back.
 
-### Responses
+## Responses
 
-Responses are the data we send back to the requester after processing their request. The response breaks down into two components:
+A response is what your API sends back to the client after processing a request. 
 
-- **Status Code** - This information is usually sent in the headers of the response, but it can also appear in the body.  It's a quick way for the client to make sure everything worked as expected.  If it did not, the status code can give a hint as to what went wrong.  There are a variety of status codes, but the most common are `200`, `201`, `204`, `400`, `401`, `403`, `404`, `500`, and `503`.  More can be found [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).  
-- **Data** - The data we send back to the requester. This data can be in various formats, but the most common are JSON and XML.
+It includes:
 
-As with requests, we must determine what kind of data we send back as a response. In this module, we will be sending JSON back to the requester. JSON is formatted almost like a JavaScript object. It is a collection of key/value pairs. The keys are strings, and the values can be strings, numbers, arrays, objects, booleans, and nulls. Here is an example of a JSON object:
+- **Status Code** - This numeric code indicates the result of the request (the most common are `200`, `201`, `204`, `400`, `401`, `403`, `404`, `500`, and `503`.  More can be found [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)). Status codes help clients quickly understand the outcome of their request.
+
+- **Data** - The actual information sent back to the client. In our case, we'll primarily use [JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON), a format resembling JavaScript objects but with specific rules (like keys enclosed in double quotes).
+
+Here is an example of a JSON object:
 
 ```json
 {
@@ -55,10 +68,4 @@ As with requests, we must determine what kind of data we send back as a response
 }
 ```
 
-The important thing to note is that the keys must be surrounded by double quotes `"`.  In JavaScript, for example, `"species"` could have also been written as `species`.  Not so, in JSON.
-
-## Review Questions
-
-1. What is an API?
-2. What are the most common HTTP methods used in APIs?
-3. What is JSON?
+JSON is an ideal format for APIs due to its readability and compatibility with various programming languages.

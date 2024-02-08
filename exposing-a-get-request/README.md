@@ -1,10 +1,10 @@
-# ![[Exposing a GET Request] - Exposing a GET Request](./assets/tktk-hero.png)
+# ![Exposing an API - Exposing a GET Request](./assets/hero.png)
 
 **Learning objective:** By the end of this lesson, students will be able to write a `GET` route and use Postman to consume from it.
 
 ## Calculator API
 
-In this lesson, we will be creating a simple calculator API. This API will have four routes:
+In this lesson, we will be creating a simple calculator API. This API will have three routes:
 
 | HTTP Method | Route         | Description                                             |
 |-------------|---------------|---------------------------------------------------------|
@@ -14,79 +14,95 @@ In this lesson, we will be creating a simple calculator API. This API will have 
 
 ## Exposing a GET Request
 
-Before building out our first route, we will need to somehow store the `total` of the calculator. We could add a database to our application to store the total. Still, we will just store the total in a variable for this lesson. We will start with a total of 0.
+Before building out our first route, we will need to store the `total` of our calculator. We will start with a total of 0.
+
+Add total to `server.js`:
 
 ```js
-// ... Require statements located above
+const express = require('express');
+const app = express();
 
+// to track our calculator total
 let total = 0;
 
-// Routes will be defined here
-
-// Listening for requests on port 3000 below
-```
-
-> 🧠 We are using `let` instead of `const` because we will update the value of `total` when we build our `POST` request.
-
-Let's build out the first route for our calculator API. This route will return the current total of the calculator. We will use the `GET` HTTP method for this route because we are not expecting any user data. We will also use the `/calculator` route. This means that the entire route will be `GET /calculator`.
-
-Before we build the route, let's review some of the main components of making an API:
-
-- **Endpoint** - This endpoint is `/calculator`.
-- **Request** - Users will make a `GET` request to this endpoint and be expected to provide no data.
-- **Response** - We will return a JSON object with the current total of the calculator.
-
-Now that we have reviewed the main components of making an API, let's build out the route. We will use the `app.get()` method to create the route.
-
-```js
-// ... Require statements located above
-
-let total = 0;
-
-// Routes will be defined here
-app.get('/calculator', (req, res) => {
-  // Code will go here
+app.listen(3000, () => {
+  console.log('Server listening on port 3000');
 });
-
-// Listening for requests on port 3000 below
 ```
 
-In this route, we only want to return the total of the calculator. We can send the `total` back as a JSON object. We can use the [`res.json()`](https://expressjs.com/en/5x/api.html#res.json) method to accomplish this goal. This method takes one argument: the data that we want to send back. In this case, we want to return the total, so we will pass in the `total` variable.
+>  We are using `let` instead of `const` here because our application will update the value of `total` each time we receive a request to alter the total (such as adding, subtracting, etc.)
+
+### Building the route
+
+Let's build out the first route for our calculator API. This route's purpose is to return the current total of the calculator.
+
+First we'll define the key components for our route:
+
+  - **Endpoint:** Our endpoint will be `/calculator`.
+  - **HTTP Method:** We will use the `GET` method because this route is designed to retrieve the current total, not to receive any user input.
+  - **Response:** The response will be a `JSON` object representing the **current total**.
+
+Now we are ready to build out the route. In Express we will use the `app.get()` method:
 
 ```js
-// ... Require statements located above
-
 let total = 0;
 
-// Routes will be defined here
+app.get('/calculator', (req, res) => {
+  // code will go here
+});
+```
+
+Inside the callback function, we will set up the logic to send back the current total. We can use Express' [`res.json()`](https://expressjs.com/en/5x/api.html#res.json) method to send a `JSON` response. Here, we'll send back an object that includes the current value of total
+
+```js
+let total = 0;
+
 app.get('/calculator', (req, res) => {
   res.json({ total });
 });
-
-// Listening for requests on port 3000 below
 ```
-> 🧠 We are using the shorthand syntax for the object. This is the same as writing `{ total: total }`. But why are we doing this? As a simple API, we know we will only return the total. However, if we were building a more complex API, we might return more data. So, by including a key that represents the data we are returning, we are making it easier for other developers and applications to use our API.
 
-## Testing a GET API Endpoint
+> 🧠 In our response, we are utilizing shorthand syntax in JavaScript for object creation. This means when we write `{ total }`, it is equivalent to `{ total: total }`. The key total is automatically assigned the value of the total variable. 
 
-We have come to a point where we can start testing this endpoint. Since this is a `GET` request, we could use the browser and navigate to `http://localhost:3000/calculator`. However, we will be using Postman to test our API. Open Postman, and let's create a new collection to contain our requests. Follow the steps to get started in a new collection:
+## Testing in Postman
 
-- Click on the `New` button in the top left corner of the Postman window.
-- Select `Collection` from the menu.
-- Rename the collection from `New Collection` to `Calculator API`.
+Since this is a `GET` request, we could use the browser and navigate to `http://localhost:3000/calculator` to test our route. However, for this lesson we will practice using Postman.
 
-Now that we have a collection, let's add a new request to test this endpoint. Make sure to have your left sidebar open in Postman to Collections:
+Let's start the server and launch the Postman application. 
 
-- You should see your `Calculator API` collection in the Collections sidebar.
-- Click on the `...` next to the collection name.
-- Select `Add Request` from the menu. Name the request `Get Total`.
-- Make sure that the `GET` method is selected.
-- Enter `http://localhost:3000/calculator` in the address bar.
-- Click the save button in the top right corner of the Postman window.
+```bash
+nodemon
+```
 
-![Get Total Postman Request](./assets/get-total-postman-request.png)
+Once in Postman, follow the following steps to get started:
 
-Now that we have created the request, we can test it. Click on the `Send` button to send the request. You should see the response in the bottom half of the Postman window. You should see the following response:
+1. Click on the `New` button in the top left corner of the Postman window.
+
+2. Select `Collection` from the menu.
+
+3. Rename the collection from `New Collection` to `Calculator API`.
+
+<br>
+
+Now that we have a collection, let's add a new request to test this endpoint:
+
+4. You should see your `Calculator API` collection in the Collections sidebar.
+
+5. Click on the `...` next to the collection name.
+
+6. Select `Add Request` from the menu. Name the request `Get Total`.
+
+7. Make sure that the `GET` method is selected.
+
+8. Enter `http://localhost:3000/calculator` in the address bar.
+
+9. Click the save button in the top right corner of the Postman window.
+
+<br>
+
+![Get Total Postman Request- tktk hunter clean up this screen shot](./assets/get-total-postman-request.png)
+
+Now that we have created the request, we can send it. Click on the `Send` button to send the request. You should see the response in the bottom half of the Postman window:
 
 ```json
 {

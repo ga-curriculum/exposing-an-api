@@ -1,4 +1,4 @@
-# ![Exposing an API - References](./assets/tktk-hero.png)
+# ![Exposing an API - References](./assets/hero.png)
 
 ## Lesson references
 

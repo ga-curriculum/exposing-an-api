@@ -1,4 +1,4 @@
-# ![[Setup] - Setup](./assets/tktk-hero.png)
+# ![Exposing an API - Setup](./assets/hero.png)
 
 ## Setup
 

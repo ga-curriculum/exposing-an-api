@@ -1,4 +1,4 @@
-# ![[Exposing a POST Request] - Exposing a POST Request](./assets/tktk-hero.png)
+# ![Exposing an API - Exposing a POST Request](./assets/hero.png)
 
 **Learning objective:** By the end of this lesson, students will be able to write a `POST` route and use Postman to post to it.
 
