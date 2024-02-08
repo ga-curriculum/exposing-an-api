@@ -2,7 +2,7 @@
 
 ## About
 
-This module will cover the basics of using Express.js to create an API. Students will learn how to create endpoints, handle requests, and send responses.
+This module introduces the essentials of building an API with Express.js. Students will learn to set up endpoints, handle incoming requests, and send back responses, laying the groundwork for effective API development with a focus on practical, real-world applications.
 
 ## Content
 
