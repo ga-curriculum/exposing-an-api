@@ -1,31 +1,42 @@
-# ![[Concepts] - Concepts](./assets/tktk-hero.png)
+# ![Exposing an API - Concepts](./assets/hero.png)
 
-**Learning objective:** By the end of this lesson, students will be able to explain what an API is and what they are used for.
+**Learning objective:** By the end of this lesson, students will be able to explain what an API is and how they are used.
 
 ## What is an API?
 
-An API (or application programming interface) is essentially a set of data or functionality that developers can use when building their own applications.  It can be created for several different reasons.  Here are some examples:
+An API (Application Programming Interface) is a set of rules and definitions that allows one software application to interact with another. In web development what we typically refer to *as* an API is actually a resource or set of resources *governed by* an API.
 
-- To provide data. Ex: [PokeAPI](https://pokeapi.co/) is an API that allows developers to access Pokemon data for use in their applications.
-- To provide map functionality. Ex: [Google Maps API](https://developers.google.com/maps/documentation/javascript/overview) is an API that allows developers to add maps to their applications.
-- To provide payment functionality. Ex: [Stripe API](https://stripe.com/docs/api) is an API that allows developers to add payment functionality to their applications.
+APIs by this definition, provide a set of data or functionality that developers can use when building their own applications.
 
-Looking at these *third-party APIs*, we can see a trend: they are all used to provide data or functionality to other applications that someone else is building.
+### Types of APIs
 
-> 📚 *Third-party APIs* are created by a company or organization that is not the same company or organization that is using the API.  Usually, many different applications, written by many different people/companies/organizations will use the same API.
+- **Third-party APIs** : Created by a company or organization that is not the same company or organization that is using the API.
 
-tktk Hunter - Can you make an image of an api that is accepting requests from a variety of sources? Or something like that? The goal is to show that an api is a stand alone application that can be consumed by a variety of applications.  Perhaps a web app, a mobile app, etc
+- **Internal APIs**: Used within a company to enable different teams or parts of a system to communicate.
 
-## How Will We Build One?
+### Examples
 
-In this module, we'll build an API by creating an Express app that will respond to client requests with data (as opposed to HTML).  The advantage of using data instead of HTML is that it's easier for other applications to integrate data into their own programming than it is to scan through a user interface for the necessary data.  Also, since the app provides data to other applications (as opposed to human end-users), we're spared the extra work of creating a user interface.  We can simply send the data itself!
+**Third-party APIs:** 
 
-## Example Use Case
+- [PokeAPI](https://pokeapi.co/) - Developers can use this API to create applications, games, or websites that require detailed Pokémon information without needing to gather and manage this extensive data themselves.
+- [Google Maps API](https://developers.google.com/maps/documentation/javascript/overview) - The Google Maps API is a set of interfaces provided by Google that allow developers to integrate mapping services into their applications.
+- [Stripe API](https://stripe.com/docs/api) - The Stripe API is essential for e-commerce websites, subscription-based services, and any online platform that needs to process payments securely and efficiently.
 
-Let's say I'm building an app that allows users to keep track of the Pokemon cards they've collected.  I could manually input the data for all the Pokemon cards that have ever been created into a database, or I could simply integrate the PokeAPI into my own application.  This makes my life much easier.  Someone else has already gone through the trouble of inputing the necessary Pokemon data into a database, so all I have to do is figure out how to access this data.
+**Internal APIs:**
 
-The developer(s) of PokeAPI could have stopped once all data had been entered into a database and then just given out the access URL to their database so that people could access it directly from their applications.  This is a bit insecure though, as someone might be able to hack their way into the database and do nasty things.  To make things safer, as well as easier, the creators of PokeAPI built an app that itself accesses the database of Pokemon data.  They then published the routes that are accessible in the application.  To integrate their data into my own app, I simply read their documentation and make requests to the correct routes.
+- A banks internal account management system
+- A Healthcare network's patient records system
 
-## Module Goal
+[tktk Hunter - Can you make an image of an api that is accepting requests from a variety of sources? Or something like that? The goal is to show that an api is a stand alone application that can be consumed by a variety of applications.  Perhaps a web app, a mobile app, etc]
 
-In this module, you'll take on the role of the API *creator*, building an API so that other developers can easily and securely access your data.  To do so, we'll create an express app that, instead of rendering HTML, will return [JSON data](https://www.w3schools.com/whatis/whatis_json.asp).
+## How APIs control data
+
+Imagine you're developing an app for users to track their Pokemon card collections. Instead of manually entering all Pokemon card data into your database, you can integrate the PokeAPI. This simplifies the process significantly as the API already contains the comprehensive Pokemon data, and your task is merely accessing this data using the API.
+
+**Why not access the database directly?**
+
+You might wonder why the developers of PokeAPI didn't just share the database access URL for direct queries. There are two main reasons:
+
+**Security:** Direct database access can pose significant security risks. It could expose the database to unauthorized access and potential malicious attacks.
+
+**Controlled access** By building an API, the developers of PokeAPI have more control over how the data is accessed and used. They can optimize data delivery, manage traffic, and ensure that the database remains secure and efficient.
