@@ -1,6 +1,6 @@
-# ![Exposing an API - Exposing a GET Request](./assets/hero.png)
+# ![Exposing an API - Exposing a GET Route](./assets/hero.png)
 
-**Learning objective:** By the end of this lesson, students will be able to write a `GET` route and use Postman to consume from it.
+**Learning objective:** By the end of this lesson, students will be able to develop and test a simple calculator API with a GET method.
 
 ## Calculator API
 
@@ -12,7 +12,7 @@ In this lesson, we will be creating a simple calculator API. This API will have 
 | POST        | /calculator   | Accepts a number and an operation to update the total.  |
 | DELETE      | /calculator   | Resets the total of the calculator to 0.                |
 
-## Exposing a GET Request
+## Exposing a GET Route
 
 Before building out our first route, we will need to store the `total` of our calculator. We will start with a total of 0.
 
@@ -63,6 +63,21 @@ app.get('/calculator', (req, res) => {
 ```
 
 > 🧠 In our response, we are utilizing shorthand syntax in JavaScript for object creation. This means when we write `{ total }`, it is equivalent to `{ total: total }`. The key total is automatically assigned the value of the total variable. 
+
+### Don't forget to add a status code! 
+
+Incorporating HTTP status codes in your application is a hallmark of professionalism and attention to detail. These codes offer immediate feedback about the outcome of each request. This practice not only makes your application more readable and user-friendly but also demonstrates your knowledge best coding practices and industry standards.
+
+Adding status codes to your responses in Express is easy with the `status()` method of the response (res) object. You can use this method right before you send a response back. Simply chain `status()` with the response method you're using, such as `.send()`, `.render()`, or `.json()`. This way, you first set the HTTP status code and then send your response. 
+
+Example:
+
+```js
+res.status(200).json({ total });
+```
+
+> In the context of web servers and APIs, when a server returns a `200` OK response, it means that the request was received, understood, and processed as expected. 
+
 
 ## Testing in Postman
 
