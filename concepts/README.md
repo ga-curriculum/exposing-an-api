@@ -4,6 +4,8 @@
 
 ## What is an API?
 
+![Incoming requests to an API](./assets/api.png)
+
 An API (Application Programming Interface) is a set of rules and definitions that allows one software application to interact with another. In web development what we typically refer to *as* an API is actually a resource or set of resources *governed by* an API.
 
 APIs by this definition, provide a set of data or functionality that developers can use when building their own applications.
@@ -26,8 +28,6 @@ APIs by this definition, provide a set of data or functionality that developers 
 
 - A banks internal account management system
 - A Healthcare network's patient records system
-
-[tktk Hunter - Can you make an image of an api that is accepting requests from a variety of sources? Or something like that? The goal is to show that an api is a stand alone application that can be consumed by a variety of applications.  Perhaps a web app, a mobile app, etc]
 
 ## How APIs control data
 

@@ -177,7 +177,7 @@ Back in Postman, make sure you are in the collection `Calculator API`:
 
 Remember to save this request.
 
-![Calculate Postman request - tktk Hunter clean up this screen shot plzthx](./assets/calculate-postman-request.png)
+![Calculate Postman request](./assets/calculate-postman-request.png)
 
 Click the `Send` button to send the request.
 
