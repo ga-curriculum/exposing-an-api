@@ -115,7 +115,7 @@ Now that we have a collection, let's add a new request to test this endpoint:
 
 <br>
 
-![Get Total Postman Request- tktk hunter clean up this screen shot](./assets/get-total-postman-request.png)
+![Get Total Postman Request](./assets/get-total-postman-request.png)
 
 Now that we have created the request, we can send it. Click on the `Send` button to send the request. You should see the response in the bottom half of the Postman window:
 
