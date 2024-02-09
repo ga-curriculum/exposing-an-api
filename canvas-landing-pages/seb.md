@@ -1,4 +1,4 @@
-# ![Exposing an API](../assets/tktk-hero.png)
+# ![Exposing an API](../assets/hero.png)
 
 ## About
 
