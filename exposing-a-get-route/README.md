@@ -66,7 +66,7 @@ app.get('/calculator', (req, res) => {
 
 ### Add a status code 
 
-Including HTTP status codes in your application is a smart next step and best practice as you are learning to develope APIs. These codes provide clear feedback on the result of each request. This approach not only enhances your application's clarity and user experience, but also reflects your understanding of good coding practices and industry norms.
+Including HTTP status codes in your application is a smart next step and best practice as you are learning to develop APIs. These codes provide clear feedback on the result of each request. This approach not only enhances your application's clarity and user experience but also reflects your understanding of good coding practices and industry norms.
 
 Adding status codes to your responses in Express is easy with the `status()` method. This method comes built into the response (res) object. Simply chain `status()` with the response method you're using, such as `.send()`, `.render()`, or `.json()`. This way, you first set the HTTP status code and then send your response. 
 
