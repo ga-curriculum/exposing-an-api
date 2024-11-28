@@ -1,4 +1,7 @@
-# ![Exposing an API - Elements of an API](./assets/hero.png)
+<h1>
+  <span class="headline">Exposing an API</span>
+  <span class="subhead">Elements of an API</span>
+</h1>
 
 **Learning objective:** By the end of this lesson, students will be able to identify and explain the main components of an API – endpoints, requests, and responses.
 

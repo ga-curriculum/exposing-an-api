@@ -1,4 +1,7 @@
-# ![Exposing an API - Concepts](./assets/hero.png)
+<h1>
+  <span class="headline">Exposing an API</span>
+  <span class="subhead">Concepts</span>
+</h1>
 
 **Learning objective:** By the end of this lesson, students will be able to explain what an API is and how they are used.
 

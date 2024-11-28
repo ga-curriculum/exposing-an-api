@@ -1,4 +1,7 @@
-# ![Exposing an API - Exposing a GET Route](./assets/hero.png)
+<h1>
+  <span class="headline">Exposing an API</span>
+  <span class="subhead">Exposing a GET Route</span>
+</h1>
 
 **Learning objective:** By the end of this lesson, students will be able to develop and test a simple calculator API with a GET method.
 
