@@ -30,8 +30,8 @@ This module introduces the essentials of building an API with Express.js. Studen
 
 ### Course landing pages
 
-- [SEB - Software Engineering Bootcamp](https://pages.git.generalassemb.ly/modular-curriculum-all-courses/exposing-an-api/canvas-landing-pages/seb.html)
-- [Fallback](https://pages.git.generalassemb.ly/modular-curriculum-all-courses/exposing-an-api/canvas-landing-pages/fallback.html)
+- [SEB - Software Engineering Bootcamp](https://ga-curriculum.github.io/exposing-an-api/canvas-landing-pages/seb.html)
+- [Fallback](https://ga-curriculum.github.io/exposing-an-api/canvas-landing-pages/fallback.html)
 
 ### Resources
 
@@ -43,4 +43,4 @@ This module introduces the essentials of building an API with Express.js. Studen
 
 ---
 
-**Find a 👾 bug 👾 or have suggestions? [Let us know](https://pages.git.generalassemb.ly/modular-curriculum-all-courses/universal-resources-internal/module-feedback.html)!**
+**Find a 👾 bug 👾 or have suggestions? [Let us know](https://ga-curriculum.github.io/universal-resources-internal/module-feedback.html)!**
